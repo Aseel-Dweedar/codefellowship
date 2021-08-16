@@ -4,17 +4,29 @@
 <head>
     <meta charset="UTF-8" />
     <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 
 <body>
     <header>
-        <a href="http://localhost:8080/signup">Sing Up</a>
-        <a href="http://localhost:8080/login">Log in</a>
-        <a th:href="@{http://localhost:8080/profile(id=${user})}">Profile</a>
+        <div th:replace="frag/topnav :: topnav"></div>
     </header>
     <main>
-        <h1>WELCOME TO CODE FELLOWS SHIP</h1>
+        <img style="width: 100%; position: relative" class="HeroImg" src="https://soimagescdn.azureedge.net/productimage/learningenvironment/ArticleHeader/computer-lab-hero.jpg" alt="dev" />
+
+        <h2 style="position: absolute; top: 70px; left: 30px" class="mainText">WELCOME TO CODE FELLOWS SHIP</h2>
     </main>
+    <!-- <div>
+        All Posts:
+        <div th:each="post : ${postList}" class="albumDiv">
+            <div>
+                <p>Post :<span th:text="${post.body}"></span></p>
+                <p>Time :<span th:text="${post.createdAt}"></span></p>
+                <p>Posted By :<span th:text="${post.user.username}"></span></p>
+            </div>
+        </div>
+    </div> -->
 </body>
 
 </html>
