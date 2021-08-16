@@ -26,8 +26,8 @@ public class homeController {
 
         if (user != null)model.addAttribute("username", applicationUserRepository.findByUsername(user.getUsername()).getUsername());
 
-        List<Post> postList = (List<Post>) postRepository.findAll();
-        model.addAttribute("postList" , postList );
+//        List<Post> postList = (List<Post>) postRepository.findAll();
+//        model.addAttribute("postList" , postList );
         return "home.html";
     }
 
