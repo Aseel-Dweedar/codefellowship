@@ -1,0 +1,8 @@
+<header th:fragment="topnav">
+    <a href="http://localhost:8080">HOME</a>
+    <a href="http://localhost:8080/signup">SING UP</a>
+    <a href="http://localhost:8080/login">LOG IN</a>
+    <!--    <a th:href="@{http://localhost:8080/profile(id=${userId})}">Profile</a>-->
+    <a th:href="@{http://localhost:8080/profile}">PROFILE</a>
+    <h3 th:text="${username}"></h3>
+</header>

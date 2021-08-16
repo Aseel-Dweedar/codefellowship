@@ -7,6 +7,8 @@
 </head>
 
 <body>
+    <div th:replace="frag/topnav :: topnav"></div>
+
     <div>
         <p>USER NAME :<span th:text="${username}"></span></p>
         <p>FIRST NAME :<span th:text="${firstName}"></span></p>
@@ -14,6 +16,25 @@
         <p>DATE OF BIRTH :<span th:text="${dateOfBirth}"></span></p>
         <p>BIO :<span th:text="${bio}"></span></p>
         <img src="https://i.pinimg.com/originals/61/85/ce/6185ce9e73e68b78c38541aee4efb864.png" alt="profile img" />
+    </div>
+
+    <form th:action="@{/addpost}" method="post">
+        <br />
+        <p>Add a post <input type="text" field="*{body}" name="body" required /></p>
+        <br />
+        <p><input type="submit" value="Submit" /></p>
+        <br />
+    </form>
+
+    <div>
+        Your Posts
+        <div th:each="post : ${postList}" class="albumDiv">
+            <div>
+                <p>Post :<span th:text="${post.body}"></span></p>
+                <p>Time :<span th:text="${post.createdAt}"></span></p>
+                <p>Posted By :<span th:text="${post.user.username}"></span></p>
+            </div>
+        </div>
     </div>
 </body>
 
