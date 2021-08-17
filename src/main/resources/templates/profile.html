@@ -12,19 +12,11 @@
         <div th:replace="frag/topnav :: topnav"></div>
     </header>
     <main style="display: grid; grid-template-columns: repeat(2, 50% 50%)">
-        <!-- <div>
-            <p>USER NAME :<span th:text="${username}"></span></p>
-            <p>FIRST NAME :<span th:text="${firstName}"></span></p>
-            <p>LAST NAME :<span th:text="${lastName}"></span></p>
-            <p>DATE OF BIRTH :<span th:text="${dateOfBirth}"></span></p>
-            <p>BIO :<span th:text="${bio}"></span></p>
-            <img src="https://i.pinimg.com/originals/61/85/ce/6185ce9e73e68b78c38541aee4efb864.png" alt="profile img" />
-        </div> -->
 
         <div class="card" style="width: 18rem; margin: auto ; margin-top: 10px;">
             <img class="card-img-top" src="https://www.donkey.bike/wp-content/uploads/2020/12/user-member-avatar-face-profile-icon-vector-22965342-e1608640557889.jpg" alt="profile img" />
             <div class="card-body">
-                <h5 class="card-title"><span th:text="${firstName}"></span></h5>
+                <h5 class="card-title"><span th:text="${username}"></span></h5>
                 <p class="card-text"><span th:text="${bio}"></p>
             </div>
             <ul class="list-group list-group-flush">
@@ -34,7 +26,6 @@
                     </ul>
             </div>
             <div>
-
                 <form class="px-4 py-3" th:action="@{/addpost}" method="post" style="width: 70%;">
                     <div class="form-group">
                         <label for="body">Type Your Post</label>
@@ -42,17 +33,6 @@
                     </div>
                     <button type="submit" class="btn btn-warning">Submit</button>
                 </form>
-
-
-
-                <!-- <form th:action="@{/addpost}" method="post">
-                    <br />
-                    <p>Add a post <input type="text" field="*{body}" name="body" required /></p>
-                    <br />
-                    <p><input type="submit" value="Submit" /></p>
-                    <br />
-                </form> -->
-
                 <div>
                     <h3> Your Posts : </h3>
                     <ul th:each="post : ${postList}" class="list-group" style="width: 70%;">
@@ -63,13 +43,6 @@
                                 </li>
                                 <br/>
                     </ul>
-
-                    <!-- <div th:each="post : ${postList}" class="albumDiv"> -->
-                    <!-- <div>
-                    <p>Post :<span th:text="${post.body}"></span></p>
-                    <p>Time :<span th:text="${post.createdAt}"></span></p>
-                    <p>Posted By :<span th:text="${post.user.username}"></span></p> -->
-                    <!-- </div> -->
                 </div>
             </div>
         </div>

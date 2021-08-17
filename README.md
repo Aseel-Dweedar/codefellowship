@@ -29,3 +29,19 @@
 - A logged-in user able to create a Post, and a post should belong to the user that created it.
 
 - A user’s posts visible on their profile page.
+
+- users can follow other users.
+
+- index page `"/"` where a user can discover other users on the service.
+
+- On a user profile page that does NOT belong to the currently logged-in user, there is a “Follow” button. When a user clicks that follow button, the logged-in user is now following the viewed-profile-page user.
+
+- note: this will require a self-join on ApplicationUsers.
+
+- A user can visit a url `(/feed)` to view all of the posts from the users that they follow.
+
+- Each post have a link to the user profile of the user who wrote the post.
+
+### To Run The App
+
+- Edit the username and password application.properties
